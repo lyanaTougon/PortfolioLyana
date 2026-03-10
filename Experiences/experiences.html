@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Expériences - Lyana Tougon</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- CSS global -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- CSS spécifique aux expériences -->
+    <link rel="stylesheet" href="experiences.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="../index.html" class="logo">Lyana Tougon</a>
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa fa-bars"></i>
+        </div>
+        <nav id="navbar" role="navigation">
+            <a href="../index.html">Accueil</a>
+            <a href="experiences.html" class="active">Expériences</a>
+            <a href="../competences/competences.html">Compétences</a>
+            <a href="../formations/formations.html">Formations</a>
+            <a href="../veille/veille.html">Veille technologiques</a>
+        </nav>
+    </header>
+
+    <!-- Section Expériences -->
+    <section class="experiences">
+       <!-- Stages -->
+<h1>Stages</h1>
+<div class="projects-grid">
+    <div class="experience-card fade-in">
+        <h2>💼 Stage - Entreprise Pletx</h2>
+        <p><strong>Période :</strong> Juin - Juillet 2025</p>
+        <p><strong>Missions :</strong> Développement d’une application Java/CSS</p>
+        <p><strong>Compétences :</strong> Travail en équipe, GitHub, Visual Studio Code</p>
+    </div>
+    <div class="experience-card fade-in">
+        <h2>💼 Stage - Auxilière de vie</h2>
+        <p><strong>Période :</strong> Juin - Juillet 2020</p>
+        <p><strong>Missions :</strong> Observer et assister l’auxiliaire de vie</p>
+        <p><strong>Résultats :</strong> Patience, communication, travail en équipe</p>
+    </div>
+    <div class="experience-card fade-in">
+        <h2>💼 Stage - Entreprise Pletx</h2>
+        <p><strong>Période :</strong> Janvier - Mars 2026</p>
+        <p><strong>Missions :</strong> Analyse et optimisation de site web : étude du fonctionnement actuel et proposition d’améliorations pour l’expérience utilisateur et la performance</p>
+        <p><strong>Compétences :</strong> GitHub, Visual Studio Code (HTML, Java, CSS)</p>
+    </div>
+</div>
+
+        <!-- Projets scolaires -->
+        <h1>Projets scolaires</h1>
+        <div class="projects-grid">
+            <div class="experience-card fade-in">
+                <h2>📚 Projet scolaire 1 - Application Java</h2>
+                <p>Projet BTS SIO SLAM : gestion d’employés</p>
+            </div>
+            <div class="experience-card coming-soon fade-in">
+                <h2>📚 Projet scolaire 2 - À compléter</h2>
+                <p>Décris ici ton projet scolaire.</p>
+            </div>
+        </div>
+
+<!-- Projets personnels -->
+<h1>Projets personnels/Stage</h1>
+<div class="projects-grid">
+    <div class="experience-card fade-in">
+        <h2>🛠️ Projet Stage 2026 - Améliorations d'un portfolio</h2>
+        <p><strong>Description :</strong> Optimisation et amélioration d’un portfolio existant pour mieux présenter les projets et améliorer l’expérience utilisateur.</p>
+        <p><strong>Lien :</strong> <a href="https://ton-portfolio.example.com" target="_blank">Voir le portfolio</a></p>
+        <p><strong>Compétences :</strong> HTML, CSS, JavaScript, GitHub, Visual Studio Code</p>
+    </div>
+    <div class="experience-card coming-soon fade-in">
+        <h2>🛠️ Projet perso 2 - À compléter</h2>
+        <p>Décris ici ton projet personnel.</p>
+    </div>
+</div>
+    </section>
+
+    <!-- Script menu toggle -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Fade-in au scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('appear');
+                appearOnScroll.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+</body>
+</html>
