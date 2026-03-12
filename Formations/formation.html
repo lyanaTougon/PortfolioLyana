@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Formations - Lyana Tougon</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- CSS global -->
+<link rel="stylesheet" href="../style.css">
+
+<!-- CSS formations -->
+<link rel="stylesheet" href="formation.css">
+</head>
+
+<body>
+
+<header>
+<a href="../index.html" class="logo">Lyana Tougon</a>
+
+<div class="menu-toggle" id="menu-toggle">
+<i class="fa fa-bars"></i>
+</div>
+
+<nav id="navbar">
+<a href="../index.html">Accueil</a>
+<a href="../Experiences/experiences.html">Expériences</a>
+<a href="../Compétences/competences.html">Compétences</a>
+<a href="../Formations/formation.html" class="active">Formations</a>
+<a href="../Veille_technologique/veilletechno.html">Veille technologique</a>
+</nav>
+</header>
+
+
+<section class="formations">
+
+<h1>Formations</h1>
+
+<div class="formations-grid">
+
+<div class="formation-card fade-in">
+<h2><i class="fas fa-laptop-code"></i> BTS SIO</h2>
+
+<p><strong>Années :</strong> 1ère et 2ème année </p>
+
+<p><strong>Spécialité :</strong> Cybersécurité (Services Informatiques aux Organisations)</p>
+
+<p><strong>Option :</strong> SLAM (Solutions Logicielles et Applications Métiers)</p>
+
+<p><strong>Établissement :</strong> Lycée René Descartes, Champs-sur-Marne</p>
+
+</div>
+
+
+<div class="formation-card fade-in">
+
+<h2><i class="fas fa-chart-line"></i> STMG - Mercatique ( BAC TECHNO )</h2>
+
+<p><strong>Année :</strong> 2024</p>
+
+<p><strong>Domaine :</strong> Sciences et technologies du management et de la gestion</p>
+
+<p><strong>Spécialité :</strong> Mercatique (Marketing)</p>
+
+</div>
+
+</div>
+
+
+<h1>Langues</h1>
+
+<div class="formations-grid">
+
+<div class="formation-card fade-in">
+
+<h2><i class="fas fa-language"></i> Anglais</h2>
+
+<p>Niveau : B1</p>
+
+</div>
+
+
+<div class="formation-card fade-in">
+
+<h2><i class="fas fa-language"></i> Espagnol</h2>
+
+<p>Niveau : A2</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<script>
+
+const menuToggle = document.getElementById('menu-toggle');
+const navbar = document.getElementById('navbar');
+
+menuToggle.addEventListener('click', () => {
+navbar.classList.toggle('active');
+});
+
+
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+threshold:0.2,
+rootMargin:"0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+
+entries.forEach(entry =>{
+
+if(!entry.isIntersecting){
+return;
+}
+
+entry.target.classList.add("appear");
+observer.unobserve(entry.target);
+
+});
+
+}, appearOptions);
+
+faders.forEach(fader =>{
+appearOnScroll.observe(fader);
+});
+
+</script>
+
+</body>
+</html>

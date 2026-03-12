@@ -1,0 +1,120 @@
+/* ===== BODY ===== */
+
+body{
+width:100%;
+min-height:100vh;
+overflow-x:hidden;
+background:#cfcbe0;
+color:#2c1a40;
+font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+}
+
+
+/* ===== TITRES ===== */
+
+.formations h1{
+text-align:left;
+font-size:3rem;
+font-weight:700;
+color:#7c3aed;
+text-transform:uppercase;
+letter-spacing:2px;
+position:relative;
+margin-top:80px;
+margin-bottom:40px;
+}
+
+.formations h1::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-10px;
+width:70px;
+height:6px;
+background:linear-gradient(90deg,#7c3aed,#5b21b6);
+border-radius:3px;
+}
+
+
+/* ===== GRID ===== */
+
+.formations-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+margin-bottom:80px;
+}
+
+
+/* ===== CARTES ===== */
+
+.formation-card{
+background:#ffffff;
+padding:25px;
+border-radius:14px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+border-left:6px solid #7c3aed;
+transition:all 0.3s ease;
+opacity:0;
+transform:translateY(30px);
+}
+
+.formation-card.appear{
+opacity:1;
+transform:translateY(0);
+transition:all 0.6s ease-out;
+}
+
+.formation-card:hover{
+transform:translateY(-6px) scale(1.03);
+box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+
+/* ===== TITRE CARD ===== */
+
+.formation-card h2{
+font-size:1.5rem;
+color:#5b21b6;
+margin-bottom:10px;
+}
+
+
+/* ===== TEXTE ===== */
+
+.formation-card p{
+font-size:1.1rem;
+line-height:1.6;
+margin:5px 0;
+}
+
+
+/* ===== ICONES ===== */
+
+.formation-card i{
+color:#7c3aed;
+margin-right:10px;
+font-size:1.3rem;
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:768px){
+
+.formations h1{
+font-size:2rem;
+margin-top:60px;
+}
+
+.formation-card h2{
+font-size:1.3rem;
+}
+
+.formation-card p{
+font-size:1rem;
+}
+
+}

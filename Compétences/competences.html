@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Compétences - Lyana Tougon</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<!-- CSS global -->
+<link rel="stylesheet" href="../style.css">
+
+<!-- CSS compétences -->
+<link rel="stylesheet" href="competences.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+<a href="../index.html" class="logo">Lyana Tougon</a>
+
+<div class="menu-toggle" id="menu-toggle">
+<i class="fa fa-bars"></i>
+</div>
+
+<nav id="navbar" role="navigation">
+<a href="../index.html">Accueil</a>
+<a href="../Experiences/experiences.html">Expériences</a>
+<a href="competences.html" class="active">Compétences</a>
+<a href="../Formations/formation.html">Formations</a>
+<a href="../Veille_technologique/veilletechno.html">Veille technologiques</a>
+</nav>
+</header>
+
+<!-- SECTION COMPÉTENCES -->
+<section class="competences">
+
+<h1>Langages de programmation</h1>
+
+<div class="competences-grid">
+
+<div class="competence-card fade-in">
+<h2><i class="fab fa-python"></i> Python</h2>
+<p>Programmation, scripts, logique algorithmique.</p>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fab fa-php"></i> PHP</h2>
+<p>Développement web backend et connexion base de données.</p>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fab fa-html5"></i> HTML</h2>
+<p>Structure des pages web.</p>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fab fa-css3-alt"></i> CSS</h2>
+<p>Design, responsive et animations.</p>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fab fa-java"></i> Java</h2>
+<p>Développement d'applications et projets scolaires.</p>
+</div>
+
+</div>
+
+
+<h1>Bases de données</h1>
+
+<div class="competences-grid">
+
+<div class="competence-card fade-in">
+<h2><i class="fas fa-database"></i> MySQL</h2>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fas fa-database"></i> PostgreSQL</h2>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fas fa-database"></i> SQL Server</h2>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fas fa-project-diagram"></i> UML / MERISE</h2>
+</div>
+
+</div>
+
+
+<h1>Systèmes d'exploitation</h1>
+
+<div class="competences-grid">
+
+<div class="competence-card fade-in">
+<h2><i class="fab fa-windows"></i> Windows 10</h2>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fab fa-windows"></i> Windows Server</h2>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fab fa-linux"></i> Debian</h2>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fab fa-linux"></i> Ubuntu</h2>
+</div>
+
+</div>
+
+
+<h1>Cybersécurité</h1>
+
+<div class="competences-grid">
+
+<div class="competence-card fade-in">
+<h2><i class="fas fa-shield-alt"></i> Analyse de vulnérabilités</h2>
+<p>Identification des failles dans les applications web.</p>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fas fa-lock"></i> Sécurité Web</h2>
+<p>Protection contre injections SQL, XSS et CSRF.</p>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fas fa-server"></i> Sécurisation Linux</h2>
+<p>Configuration et durcissement des systèmes.</p>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fas fa-key"></i> Chiffrement</h2>
+<p>Gestion des accès utilisateurs et protection des données.</p>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fas fa-user-shield"></i> RGPD</h2>
+<p>Respect de la protection des données personnelles.</p>
+</div>
+
+</div>
+
+
+<h1>Outils et environnements</h1>
+
+<div class="competences-grid">
+
+<div class="competence-card fade-in">
+<h2><i class="fas fa-code"></i> VS Code / Eclipse</h2>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fab fa-git-alt"></i> Git / GitHub / GitLab</h2>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fas fa-tasks"></i> GitHub Projects</h2>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fas fa-cloud"></i> Google Drive / Dropbox</h2>
+</div>
+
+<div class="competence-card fade-in">
+<h2><i class="fas fa-desktop"></i> VirtualBox</h2>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SCRIPT MENU + ANIMATION -->
+<script>
+
+const menuToggle = document.getElementById('menu-toggle');
+const navbar = document.getElementById('navbar');
+
+menuToggle.addEventListener('click', () => {
+navbar.classList.toggle('active');
+});
+
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+threshold: 0.2,
+rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
+
+entries.forEach(entry => {
+
+if(!entry.isIntersecting){
+return;
+}
+
+entry.target.classList.add('appear');
+appearOnScroll.unobserve(entry.target);
+
+});
+
+}, appearOptions);
+
+faders.forEach(fader => {
+appearOnScroll.observe(fader);
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Veille Technologique - Lyana Tougon</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- CSS global -->
+<link rel="stylesheet" href="../style.css">
+
+<!-- CSS veille -->
+<link rel="stylesheet" href="veilletechno.css">
+</head>
+
+<body>
+
+<header>
+<a href="../index.html" class="logo">Lyana Tougon</a>
+
+<div class="menu-toggle" id="menu-toggle">
+<i class="fa fa-bars"></i>
+</div>
+
+<nav id="navbar">
+<a href="../index.html">Accueil</a>
+<a href="../Experiences/experiences.html">Expériences</a>
+<a href="../Compétences/competences.html">Compétences</a>
+<a href="../Formations/formation.html">Formations</a>
+<a href="../Veille_technologique/veilletechno.html" class="active">Veille technologique</a>
+</nav>
+</header>
+
+<section class="veille">
+
+<h1>Veille Technologique</h1>
+
+<div class="veille-intro fade-in">
+
+<h2>Sujet de veille : Frontend Frameworks</h2>
+
+<p>
+Un framework front-end est un ensemble d’outils et de bibliothèques permettant 
+de créer plus facilement et rapidement des interfaces utilisateur interactives 
+pour le web. Il facilite la gestion du DOM, le style, la réactivité et la 
+modularité du code.
+</p>
+
+</div>
+
+<h1>Exemples de frameworks</h1>
+
+<div class="veille-grid">
+
+<div class="veille-card fade-in">
+
+<h2><i class="fab fa-react"></i> React</h2>
+
+<p>Documentation officielle et ressources pour React.js</p>
+
+<a href="https://react.dev/" target="_blank">Voir le lien</a>
+
+</div>
+
+
+<div class="veille-card fade-in">
+
+<h2><i class="fab fa-vuejs"></i> Vue.js</h2>
+
+<p>Documentation officielle et tutoriels pour Vue.js</p>
+
+<a href="https://vuejs.org/" target="_blank">Voir le lien</a>
+
+</div>
+
+
+<div class="veille-card fade-in">
+
+<h2><i class="fab fa-angular"></i> Angular</h2>
+
+<p>Documentation officielle et guides pour Angular</p>
+
+<a href="https://angular.io/" target="_blank">Voir le lien</a>
+
+</div>
+
+
+<div class="veille-card fade-in">
+
+<h2><i class="fas fa-bolt"></i> Svelte</h2>
+
+<p>Documentation officielle et tutoriels pour Svelte</p>
+
+<a href="https://svelte.dev/" target="_blank">Voir le lien</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<script>
+
+const menuToggle = document.getElementById('menu-toggle');
+const navbar = document.getElementById('navbar');
+
+menuToggle.addEventListener('click', () => {
+navbar.classList.toggle('active');
+});
+
+
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+threshold:0.2,
+rootMargin:"0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+
+entries.forEach(entry =>{
+
+if(!entry.isIntersecting){
+return;
+}
+
+entry.target.classList.add("appear");
+observer.unobserve(entry.target);
+
+});
+
+}, appearOptions);
+
+faders.forEach(fader =>{
+appearOnScroll.observe(fader);
+});
+
+</script>
+
+</body>
+</html>
