@@ -11,6 +11,7 @@ body {
 /* ========== CONTAINER ========== */
 .project-detail {
     max-width: 1000px;
+    color: #fff;
     margin: 6rem auto;  /* réduit de 10rem à 6rem */
     padding: 2.5rem;    /* légèrement plus compact */
     border-radius: 20px;
@@ -115,7 +116,7 @@ p {
 .back-btn {
     display: inline-block;
     padding: 0.5rem 1.5rem;
-    background-color: #b892ff;
+    background-color: #ffffff;
     color: #000;
     font-size: 1.3rem; /* réduit de 1.5rem à 1.3rem */
     font-weight: 600;
@@ -188,7 +189,7 @@ p {
 }
 
 .portfolio-card:hover .cta {
-    color: #9b59ff;
+    color: #ffffff;
 }
 
 /* ========== RESPONSIVE ========== */
