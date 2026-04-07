@@ -353,3 +353,111 @@ section {
 .experience-card p {
     margin-bottom: 0.8rem;
 }
+/* ========== VARIABLES ========== */
+:root {
+    --primary-color: plum;
+    --secondary-color: blueviolet;
+    --bg-gradient: linear-gradient(135deg, #000000, #0a001a, #1a0033, #3a0ca3);
+    --text-color: #ffffff;
+}
+
+/* ========== RESET & BASE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ========== SECTION EXPERIENCES ========== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.experience-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+    padding: 1.8rem 1.5rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(227, 196, 247, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(159, 137, 174, 0.6);
+}
+
+.experience-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.experience-card p {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: #ddd;
+}
+
+/* ========== BOUTON “Voir plus” ========== */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #9b00ff, #7f78ff);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-top: auto; /* pousse en bas */
+    align-self: center; /* centre le bouton horizontalement */
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(141, 133, 147, 0.8);
+}
+
+/* ========== TITRES SECTIONS ========== */
+.experiences h1 {
+    font-size: 2.5rem;
+    margin: 3rem 0 2rem 0;
+    color: var(--primary-color);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .experience-card p {
+        font-size: 1.3rem;
+    }
+
+    .btn {
+        font-size: 1.1rem;
+        padding: 0.4rem 1rem;
+    }
+}

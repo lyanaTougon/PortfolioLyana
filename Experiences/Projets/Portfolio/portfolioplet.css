@@ -5,77 +5,79 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    font-size: 18px; /* base légèrement plus grande */
+    font-size: 15px; /* réduit de 18px à 15px */
 }
 
 /* ========== CONTAINER ========== */
 .project-detail {
-    max-width: 1100px;
-    margin: 10rem auto;
-    padding: 3rem;
+    max-width: 1000px;
+    margin: 6rem auto;  /* réduit de 10rem à 6rem */
+    padding: 2.5rem;    /* légèrement plus compact */
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    box-shadow: 0 0 25px rgba(155, 0, 255, 0.2);
+    box-shadow: 0 0 20px rgba(155, 0, 255, 0.2);
 }
 
 /* ========== TITRE PRINCIPAL ========== */
 .project-detail h1 {
-    font-size: 4rem; /* légèrement plus grand */
-    margin-bottom: 2rem;
+    font-size: 2.8rem;  /* réduit de 4rem à 2.8rem */
+    margin-bottom: 1.5rem;
     color: white;
+    text-align: center;
 }
 
 /* ========== INTRODUCTION ========== */
 .intro {
-    font-size: 2rem; /* texte plus lisible */
-    margin-bottom: 3rem;
+    font-size: 1.6rem; /* réduit de 2rem à 1.6rem */
+    margin-bottom: 2.5rem;
     color: #ffffff;
+    text-align: center;
 }
 
 /* ========== IMAGES ========== */
 .images {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-bottom: 3rem;
+    gap: 1.5rem;  /* réduit l’espacement */
+    margin-bottom: 2.5rem;
 }
 
 .images img {
     width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(155, 0, 255, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(155, 0, 255, 0.4);
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .images img:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(155, 0, 255, 0.7);
+    box-shadow: 0 0 25px rgba(155, 0, 255, 0.7);
 }
 
 /* ========== DÉTAIL TEXTE ========== */
 h2 {
-    font-size: 2.2rem; /* sous-titres légèrement plus visibles */
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    font-size: 1.6rem; /* réduit de 2.2rem à 1.6rem */
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
     color: #ffffff;
 }
 
 p {
-    font-size: 1.7rem; /* texte un peu plus grand */
-    line-height: 1.9;
+    font-size: 1.3rem; /* réduit de 1.7rem à 1.3rem */
+    line-height: 1.7;
     color: #ffffff;
 }
 
 /* ========== BOUTONS ========== */
 .btn {
     display: inline-block;
-    padding: 1.1rem 3.2rem;
+    padding: 0.7rem 2rem; /* réduit légèrement */
     background-color: black;
     color: darkgrey;
-    font-size: 1.8rem; /* texte légèrement agrandi */
+    font-size: 1.4rem; /* réduit de 1.8rem à 1.4rem */
     font-weight: 600;
-    border-radius: 4rem;
+    border-radius: 30px;
     border: 2px solid var(--primary-color);
     transition: all 0.3s ease;
     cursor: pointer;
@@ -92,10 +94,10 @@ p {
 /* BOUTON PDF */
 .pdf-btn {
     display: inline-block;
-    padding: 0.55rem 1.8rem;
+    padding: 0.5rem 1.5rem;
     background-color: #8a7ea0;
-    color: #ffffff;
-    font-size: 1.5rem; /* texte plus lisible */
+    color: #fff;
+    font-size: 1.3rem; /* réduit de 1.5rem à 1.3rem */
     font-weight: 600;
     border-radius: 6px;
     border: none;
@@ -112,10 +114,10 @@ p {
 /* BOUTON RETOUR */
 .back-btn {
     display: inline-block;
-    padding: 0.55rem 1.8rem;
+    padding: 0.5rem 1.5rem;
     background-color: #b892ff;
     color: #000;
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* réduit de 1.5rem à 1.3rem */
     font-weight: 600;
     border-radius: 6px;
     border: none;
@@ -132,9 +134,10 @@ p {
 
 /* ========== PORTFOLIO CARDS ========== */
 .portfolio-final {
-    margin: 4rem 0;
+    margin: 3rem 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .portfolio-link {
@@ -144,40 +147,41 @@ p {
 .portfolio-card {
     background-color: #fff;
     color: #000;
-    padding: 2.5rem 3rem;
+    padding: 2rem 2.5rem; /* un peu plus compact */
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    max-width: 550px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    margin: 1rem;
 }
 
 .portfolio-card:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 .portfolio-icon {
     color: #6f42c1;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .portfolio-card h3 {
-    font-size: 2.2rem; /* titre carte légèrement plus grand */
-    margin-bottom: 0.8rem;
+    font-size: 1.8rem; /* réduit de 2.2rem à 1.8rem */
+    margin-bottom: 0.6rem;
     font-weight: 700;
 }
 
 .portfolio-card p {
-    font-size: 1.5rem; /* description un peu plus grande */
+    font-size: 1.3rem; /* réduit de 1.5rem à 1.3rem */
     color: #555;
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
 }
 
 .portfolio-card .cta {
-    font-size: 1.4rem; /* call to action légèrement agrandi */
+    font-size: 1.2rem; /* réduit de 1.4rem à 1.2rem */
     font-weight: 600;
     color: #6f42c1;
     transition: color 0.3s ease;
@@ -191,5 +195,30 @@ p {
 @media (max-width: 768px) {
     .images {
         grid-template-columns: 1fr;
+    }
+
+    .project-detail h1 {
+        font-size: 2.2rem;
+    }
+
+    .intro, p, .portfolio-card p {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    .btn, .pdf-btn, .back-btn {
+        font-size: 1.1rem;
+        padding: 0.4rem 1.2rem;
+    }
+
+    .portfolio-card h3 {
+        font-size: 1.5rem;
+    }
+
+    .portfolio-card .cta {
+        font-size: 1rem;
     }
 }
