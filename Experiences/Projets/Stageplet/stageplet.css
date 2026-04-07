@@ -1,0 +1,110 @@
+/* ========== FOND DE LA PAGE ========== */
+body {
+    background: linear-gradient(135deg, #3f3551, #7a629b); /* violet foncé → violet clair */
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-size: 18px; /* base lisible */
+}
+
+/* ========== CONTAINER ========== */
+.project-detail {
+    max-width: 1000px;
+    margin: 6rem auto;
+    padding: 3rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05); /* effet verre léger */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(155, 0, 255, 0.2);
+}
+
+/* ========== TITRE PRINCIPAL ========== */
+.project-detail h1 {
+    font-size: 3.8rem;
+    margin-bottom: 2rem;
+    color: #ffffff; /* violet clair */
+    text-align: center;
+}
+
+/* ========== INTRODUCTION ========== */
+.intro {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* ========== SOUS-TITRES ========== */
+h2 {
+    font-size: 2.2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 0.5rem;
+}
+
+/* ========== TEXTE & LISTES ========== */
+p {
+    font-size: 1.7rem;
+    line-height: 1.9;
+    color: #ffffff;
+}
+
+ul {
+    font-size: 1.7rem;
+    line-height: 1.9;
+    margin-left: 2rem;
+    color: #ffffff;
+}
+
+ul li {
+    margin-bottom: 0.8rem;
+}
+
+/* ========== BOUTON RETOUR ========== */
+.back-btn {
+    display: inline-block;
+    padding: 0.6rem 2rem;
+    background-color: #ffffff;
+    color: #000;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background-color: #e0b3ff;
+    transform: scale(1.05);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .project-detail {
+        margin: 3rem 1rem;
+        padding: 2rem;
+    }
+
+    .project-detail h1 {
+        font-size: 3rem;
+    }
+
+    .intro, p, ul {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .back-btn {
+        font-size: 1.4rem;
+        padding: 0.5rem 1.5rem;
+    }
+}

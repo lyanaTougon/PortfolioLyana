@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet Portfolio - Lyana Tougon</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="portfolioplet.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <a href="../index.html" class="logo">Lyana Tougon</a>
+</header>
+
+<!-- SECTION PROJET -->
+<section class="project-detail">
+
+    <h1>🛠️ Projet Stage 2026 - Améliorations d'un portfolio</h1>
+
+    <p class="intro">
+        Pendant mon stage, j’ai eu pour mission d’améliorer un portfolio existant.
+        L’objectif était de moderniser le design, améliorer l’expérience utilisateur
+        et rendre la navigation plus claire.
+    </p>
+
+    <!-- IMAGES -->
+    <div class="images">
+        <img src="/Images/Protfolioplet/Page Accueil.png" alt="Page Accueil" onclick="openLightbox(this.src)">
+        <img src="/Images/Protfolioplet/competences.png" alt="Compétences" onclick="openLightbox(this.src)">
+        <img src="/Images/Protfolioplet/projet.png" alt="Projets" onclick="openLightbox(this.src)">
+        <img src="/Images/Protfolioplet/contact.png" alt="Contact" onclick="openLightbox(this.src)">
+    </div>
+
+    <!-- TEXTE DETAIL -->
+    <h2>🎯 Objectifs</h2>
+    <p>
+        Analyse du site existant afin d’identifier les points à améliorer,
+        notamment au niveau du design, de la lisibilité et de la navigation.
+    </p>
+
+    <h2>⚙️ Améliorations réalisées</h2>
+    <p>
+        - Refonte du design<br>
+        - Amélioration de l’expérience utilisateur<br>
+        - Meilleure organisation des sections<br>
+        - Optimisation du code HTML / CSS
+    </p>
+
+    <h2>📄 Aperçu PDF</h2>
+    <p>
+        Voici un extrait du PDF présentant les améliorations réalisées pendant mon stage :
+    </p>
+
+    <!-- Bouton PDF -->
+    <a href="/Images/Protfolioplet/Analyse de portfolio (projet stage).pdf" target="_blank" class="pdf-btn">
+        📄 Voir le document PDF
+    </a>
+
+    <!-- Carte Portfolio final professionnelle -->
+    <div class="portfolio-final">
+        <a href="https://lyanatougon.github.io/Portfolio_Pletx/" target="_blank" class="portfolio-link">
+            <div class="portfolio-card">
+                <div class="portfolio-icon">
+                    <i class="fa-solid fa-laptop-code fa-2x"></i>
+                </div>
+                <h3>Portfolio final après amélioration</h3>
+                <p>Découvrez le portfolio complet, modernisé et optimisé pendant mon stage.</p>
+                <span class="cta">Voir le portfolio →</span>
+            </div>
+        </a>
+    </div>
+
+    <h2>💻 Compétences et apprentissages</h2>
+    <ul>
+        <li><strong>Compétences techniques :</strong> HTML, CSS, JavaScript, GitHub, Visual Studio Code</li>
+        <li><strong>Organisation et gestion :</strong> rigueur, planification et gestion efficace du temps</li>
+        <li><strong>Structuration des projets :</strong> organisation claire des fichiers et du code pour faciliter le développement et la maintenance</li>
+        <li><strong>Amélioration de sites web :</strong> optimisation du design, de la structure et des animations</li>
+    </ul>
+
+    <!-- Bouton Retour stylé -->
+    <a href="/Experiences/experiences.html" class="back-btn">
+        ⬅ Retour
+    </a>
+
+</section>
+
+<!-- Lightbox JS -->
+<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
+<script>
+function openLightbox(src) {
+    const instance = basicLightbox.create(`
+        <img src="${src}" style="max-width: 90vw; max-height: 90vh;">
+    `)
+    instance.show()
+}
+</script>
+
+</body>
+</html>

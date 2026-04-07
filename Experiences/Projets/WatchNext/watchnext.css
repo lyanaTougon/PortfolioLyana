@@ -1,0 +1,119 @@
+/* ========== FOND DE LA PAGE ========== */
+body {
+    background: linear-gradient(135deg, #524f74, #635873);
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 16px; /* légèrement plus petit que 18px */
+}
+
+/* ========== CONTAINER PROJET ========== */
+.project-detail {
+    max-width: 1100px;
+    margin: 6rem auto;
+    padding: 3rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(155, 0, 255, 0.2);
+}
+
+/* ========== TITRES ========== */
+.project-detail h1 {
+    font-size: 3rem; /* réduit de 3.5rem à 3rem */
+    margin-bottom: 2rem;
+    color: #ffffff;
+}
+
+.project-detail h2 {
+    font-size: 1.8rem; /* réduit de 2.2rem à 1.8rem */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+/* ========== PARAGRAPHES ET LISTES ========== */
+.project-detail p {
+    font-size: 1.5rem; /* réduit de 1.8rem à 1.5rem */
+    line-height: 1.8;  /* un peu plus compact */
+    color: #ffffff;
+}
+
+.project-detail ul {
+    font-size: 1.5rem; /* réduit de 1.7rem à 1.5rem */
+    line-height: 1.7;
+    color: #ffffff;
+    padding-left: 2rem;
+}
+
+.project-detail ul li {
+    margin-bottom: 0.6rem; /* un peu plus compact */
+}
+
+/* ========== BOUTON PROJET RECTANGULAIRE ========== */
+.project-btn {
+    display: inline-block;
+    padding: 0.6rem 1.8rem; /* légèrement plus petit */
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1.5rem; /* réduit de 1.6rem à 1.5rem */
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+}
+
+.project-btn:hover {
+    background-color: #9b59ff;
+    transform: scale(1.05);
+}
+
+/* ========== BOUTON RETOUR ========== */
+.back-btn {
+    display: inline-block;
+    padding: 0.5rem 1.8rem; /* un peu plus petit */
+    background-color: #ffffff;
+    color: #000;
+    font-size: 1.5rem; /* réduit de 1.6rem à 1.5rem */
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background-color: #e0b3ff;
+    transform: scale(1.05);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .project-detail {
+        margin: 4rem 1rem;
+        padding: 2rem;
+    }
+
+    .project-detail h1 {
+        font-size: 2.5rem; /* réduit de 2.8rem */
+    }
+
+    .project-detail h2 {
+        font-size: 1.6rem; /* réduit de 2rem */
+    }
+
+    .project-detail p,
+    .project-detail ul {
+        font-size: 1.4rem; /* réduit de 1.5rem */
+    }
+
+    .project-btn,
+    .back-btn {
+        font-size: 1.3rem; /* réduit de 1.4rem */
+        padding: 0.5rem 1.3rem;
+    }
+}

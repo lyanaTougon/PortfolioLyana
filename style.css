@@ -307,3 +307,49 @@ section {
     border-radius: 5px;
     transition: width 1s ease-in-out;
 }
+/* ========== CARDS EXPERIENCES (ALIGNEMENT PRO) ========== */
+.experience-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px; /* même taille pour toutes les cartes */
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(227, 196, 247, 0.2);
+    transition: 0.3s;
+}
+
+/* Effet au survol des cartes */
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(159, 137, 174, 0.6);
+}
+
+
+/* ========== BOUTONS (PETIT + EN BAS) ========== */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.6rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #9b00ff, #7f788f);
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: auto; /* pousse en bas */
+    align-self: center; /* centre le bouton */
+}
+
+/* Hover bouton */
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(141, 133, 147, 0.8);
+}
+
+
+/* ========== ESPACEMENT INTERNE TEXTE ========== */
+.experience-card p {
+    margin-bottom: 0.8rem;
+}
