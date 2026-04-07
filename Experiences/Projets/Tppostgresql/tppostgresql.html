@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP PostgreSQL - Utilisateurs et Rôles</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../Tppostgresql/tppostgresql.css">
+
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css">
+</head>
+
+<body>
+
+<header>
+    <a href="../../../index.html" class="logo">Lyana Tougon</a>
+</header>
+
+<section class="tp-section">
+
+    <h1>🗄️ TP PostgreSQL - Gestion des utilisateurs et des rôles</h1>
+
+    <h2>Objectif du TP</h2>
+    <p>
+        Comprendre la gestion des utilisateurs, des rôles et des permissions dans PostgreSQL.
+    </p>
+
+    <!-- ETAPE 1 -->
+    <h2>1. Redémarrage PostgreSQL</h2>
+    <p>La commande <code>sudo systemctl restart postgresql</code> permet de redémarrer le serveur PostgreSQL pour appliquer les changements ou corriger un problème.</p>>
+    <!-- ETAPE 2 -->
+    <h2>2. Création des utilisateurs</h2>
+    <p>Deux types d’utilisateurs sont créés :</p>
+    <ul>
+        <li>Un utilisateur standard (picsou) avec droit de connexion uniquement.</li>
+        <li>Un administrateur (admin) avec le privilège <strong>SUPERUSER</strong>.</li>
+    </ul>
+    <!-- ETAPE 3 -->
+    <h2>3. Vérification des rôles</h2>
+    <p>La commande <code>\du</code> affiche la liste des utilisateurs, leurs attributs et leur appartenance à des groupes.</p>
+    <div class="images">
+        <img src="/Images/tppostgresql/tppostgresql1.png" onclick="openLightbox(this.src)">
+    </div>
+
+    <!-- ETAPE 4 -->
+    <h2>4. Modification utilisateur</h2>
+    <p>La commande <code>ALTER USER</code> est utilisée pour modifier le mot de passe ou d’autres informations d’un utilisateur.</p>
+    <!-- ETAPE 5 -->
+    <h2>5. Création des rôles</h2>
+    <p>Des rôles (groupes) comme <code>gr_admin</code> et <code>gr_canards</code> sont créés pour simplifier la gestion des permissions.</p>
+    <!-- ETAPE 6 -->
+    <h2>6. Attribution des rôles</h2>
+    <p>Les utilisateurs sont ajoutés aux rôles via <code>GRANT</code> pour hériter des permissions associées.</p>
+    <div class="images">
+        <img src="/Images/tppostgresql/tppostgresql2.png" onclick="openLightbox(this.src)">
+    </div>
+
+    <!-- ETAPE 7 -->
+    <h2>7. Test de connexion</h2>
+    <p>On teste la connexion de l’utilisateur picsou avec <code>psql -U picsou -d template1</code>.</p>
+    <!-- ETAPE 8 -->
+    <h2>8. Vérification des permissions</h2>
+    <ul>
+        <li>Création de table : refusée, faute de permissions.</li>
+        <li>Création d’utilisateur : refusée, car il ne possède ni le droit CREATEROLE ni le statut SUPERUSER.</li>
+    </ul>
+    <div class="images">
+        <img src="/Images/tppostgresql/tppostgresql4.png" onclick="openLightbox(this.src)">
+    </div>
+
+    <a href="../../../Experiences/experiences.html" class="back-btn">⬅ Retour</a>
+
+</section>
+
+<!-- Lightbox JS -->
+<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
+<script>
+function openLightbox(src) {
+    const instance = basicLightbox.create(`<img src="${src}" style="max-width:90vw; max-height:90vh;">`);
+    instance.show();
+}
+</script>
+
+</body>
+</html>

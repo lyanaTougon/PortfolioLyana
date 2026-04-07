@@ -1,0 +1,149 @@
+/* ======================= BODY ======================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6c7194, #6a5acd); /* violet foncé → violet-bleu clair */
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Assurer que le header fixe ne cache pas le contenu */
+body .tp-section {
+    margin-top: 120px;
+}
+
+/* Liens */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* ======================= BASE TP CSRF ======================= */
+.tp-section {
+    max-width: 1000px;
+    margin: 120px auto 60px auto; /* espace sous le header fixe */
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* TITRES TP CSRF */
+.tp-section h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.tp-section h2 {
+    font-size: 2rem;
+    color: var(--secondary-color);
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.tp-section h3 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-top: 20px;
+    color: #fff;
+}
+
+/* TEXTE ET LISTES */
+.tp-section p, .tp-section li, .tp-section code {
+    font-size: 1.4rem;
+    color: #ddd;
+}
+
+.tp-section code {
+    background-color: rgba(255,255,255,0.1);
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.tp-section ol, .tp-section ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* IMAGES ET LIGHTBOX */
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.images img {
+    width: 250px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+/* BOUTON RETOUR */
+.back-btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #9b00ff, #7f78ff);
+    color: #fff;
+    text-decoration: none;
+    margin-top: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(141, 133, 147, 0.8);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .tp-section {
+        margin: 100px 2rem 60px 2rem;
+        padding: 20px;
+    }
+
+    .images img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .tp-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .tp-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .tp-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .tp-section p, .tp-section li, .tp-section code {
+        font-size: 1.3rem;
+    }
+}

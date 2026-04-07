@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP CSRF - Cross-Site Request Forgery</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../Tpcsrf/tpcsrf.css"> <!-- CSS spécifique TP CSRF -->
+    <!-- Font Awesome pour icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css">
+</head>
+<body>
+<header>
+    <a href="../../../index.html" class="logo">Lyana Tougon</a>
+</header>
+
+<section class="tp-section">
+    <h1>🛡️ TP CSRF - Cross-Site Request Forgery</h1>
+
+    <h2>Objectif du TP</h2>
+    <p>
+        Comprendre et tester les attaques CSRF et les mécanismes de protection avec des tokens.
+        L’objectif est de voir comment un site peut se protéger contre des requêtes malveillantes.
+    </p>
+
+    <h2>Étapes à suivre</h2>
+    <ol>
+        <li>Lancer <code>index.php</code> et saisir un nom et un email.</li>
+        <li>Soumettre le formulaire qui appelle <code>submit.php</code> et affiche les données.</li>
+        <li>Tester une requête GET modifiée pour simuler une attaque CSRF :<br>
+        <code>http://localhost/TP-CSRF/submit.php?fullname=Usurpateur&email=exec(mkfs.ext4 /dev/sdb1)&jeton=codeinconnu&submit=Submit</code></li>
+        <li>Observer le message d’erreur si le jeton n’est pas valide.</li>
+    </ol>
+
+    <div class="images">
+        <img src="/Images/Tp csv/tpcsrf1.png" alt="Image 1 TP CSRF" onclick="openLightbox(this.src)">
+        <img src="/Images/Tp csv/tpcsrf2.png" alt="Image 2 TP CSRF" onclick="openLightbox(this.src)">
+        <img src="/Images/Tp csv/tpcsrf3.png" alt="Image 3 TP CSRF" onclick="openLightbox(this.src)">
+        <img src="/Images/Tp csv/tpcsrf4.png" alt="Image 3 TP CSRF" onclick="openLightbox(this.src)">
+        <img src="/Images/Tp csv/tpcsrf5.png" alt="Image 3 TP CSRF" onclick="openLightbox(this.src)">
+    </div>
+
+    <h2>Code utilisé</h2>
+    <div class="images">
+        <img src="/Images/Tp csv/tpcsrf6.png" alt="Code 1" onclick="openLightbox(this.src)">
+        <img src="/Images/Tp csv/tpcsrf7.png" alt="Code 1" onclick="openLightbox(this.src)">
+
+
+    </div>
+
+    <h2>Explications</h2>
+
+    <h3>Qu’est-ce que le CSRF ?</h3>
+    <p>
+        CSRF signifie falsification de requête inter-site. C’est une attaque où un site malveillant
+        peut faire exécuter des actions sur un site légitime où tu es déjà connecté, sans ton consentement.
+    </p>
+    <p>
+        Exemple : un utilisateur connecté à son compte bancaire pourrait voir une requête externe
+        déclencher un transfert d’argent automatiquement, car le navigateur envoie ses cookies de session.
+    </p>
+
+    <h3> Comment le TP protège contre CSRF</h3>
+    <ul>
+        <li>Chaque formulaire reçoit un <strong>token CSRF</strong> unique, lié à la session de l’utilisateur.</li>
+        <li>Le token est envoyé avec le formulaire et vérifié côté serveur à la soumission.</li>
+        <li>Si le token correspond à celui de la session → la requête est valide.</li>
+        <li>Si le token est absent ou incorrect → la requête est rejetée et un message d’alerte s’affiche.</li>
+    </ul>
+
+    <h3>Exemple d’attaque CSRF</h3>
+    <p>
+        Un attaquant pourrait essayer de soumettre une requête en dehors du formulaire original.
+        Comme il ne connaît pas le token valide, la tentative est détectée et bloquée.
+        Seul le site d’origine peut générer un token valide.
+    </p>
+
+    <h3>Importance de la session</h3>
+    <p>
+        Le token est stocké dans la session de l’utilisateur. Cela permet de lier le token à un utilisateur précis
+        et d’empêcher qu’un token soit réutilisé par un attaquant. Sans session, le token serait le même pour tout le monde et la protection serait inefficace.
+    </p>
+
+    <a href="../../../Experiences/experiences.html" class="back-btn">⬅ Retour</a>
+</section>
+
+<!-- Lightbox JS -->
+<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
+<script>
+function openLightbox(src) {
+    const instance = basicLightbox.create(`<img src="${src}" style="max-width:90vw; max-height:90vh;">`);
+    instance.show();
+}
+</script>
+</body>
+</html>
