@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP PostgreSQL - Triggers</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="tptrigger.css">
+
+    <!-- Lightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.css">
+</head>
+<body>
+
+<header>
+    <a href="../../../index.html" class="logo">Lyana Tougon</a>
+</header>
+
+<section class="tp-section">
+
+    <h1>TP PostgreSQL - Triggers</h1>
+
+    <h2>1. À quoi servent les triggers ?</h2>
+    <p>Les triggers permettent d'assurer une parfaite intégrité des données. Le mot "trigger" peut être traduit par "déclencheur" en français. Un trigger est un script qui se déclenche sur certains évènements de la base de données. Les triggers se définissent sur des objets de type TABLE et concernent les évènements suivants : <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>. Ils peuvent être déclenchés avant (<code>BEFORE</code>) ou après (<code>AFTER</code>) un évènement.</p>
+ 
+    <h2>2. Comment ça marche ?</h2>
+
+    <h3>2.1 Préalable</h3>
+    <p>Avant toute déclaration ou manipulation de trigger, il est nécessaire de déclarer au moteur PostgreSQL que l'on utilise le langage PL/pgSQL :</p>
+    <pre><code>CREATE LANGUAGE PLPGSQL;</code></pre>
+
+
+    <h3>2.2 Création d'un trigger</h3>
+    <p>La syntaxe d'un trigger est la suivante :</p>
+    <pre><code>CREATE TRIGGER nom_trigger
+{BEFORE | AFTER} {INSERT | UPDATE | DELETE}
+ON nom_table
+EXECUTE PROCEDURE nom_fonction();</code></pre>
+>
+
+    <h3>2.3 Mon premier trigger</h3>
+
+    <h4>2.3.1 Création de la table</h4>
+    <pre><code>CREATE TABLE Employee(
+    nom_employe TEXT,
+    salaire INTEGER,
+    utilisateur_dermodif TEXT
+);</code></pre>
+    <div class="images">
+        <img src="../../../Images/Tp trigger/tptrigger1.png" onclick="openLightbox(this.src)">
+    </div>
+
+    <h3>2.4 Définition des fonctions</h3>
+    <pre><code>CREATE FUNCTION fct() RETURNS trigger AS $fct$
+BEGIN
+    IF NEW.nom_employe IS NULL THEN
+        RAISE EXCEPTION 'nom_employe ne peut pas être NULL';
+    END IF;
+    RETURN NEW;
+END;
+$fct$ LANGUAGE plpgsql;</code></pre>
+    <div class="images">
+        <img src="../../../Images/Tp trigger/tptrigger2.png" onclick="openLightbox(this.src)">
+    </div>
+
+    <h3>2.5 Création des triggers</h3>
+    <pre><code>CREATE TRIGGER trig
+BEFORE INSERT OR UPDATE
+ON Employee
+FOR EACH ROW
+EXECUTE PROCEDURE fct();</code></pre>
+    <div class="images">
+        <img src="../../../Images/Tp trigger/tptrigger3.png" onclick="openLightbox(this.src)">
+    </div>
+
+    <h3>2.6 Insertion des données</h3>
+    <p>Insertion valide :</p>
+    <pre><code>INSERT INTO Employee VALUES ('Toto', 154, 'Tata');</code></pre>
+    <p>Insertion invalide :</p>
+    <pre><code>INSERT INTO Employee VALUES (NULL, 154, 'Titi');</code></pre>
+    <div class="images">
+        <img src="../../../Images/Tp trigger/tptrigger4.png" onclick="openLightbox(this.src)">
+    </div>
+    <div class="images">
+        <img src="../../../Images/Tp trigger/tptrigger5.png" onclick="openLightbox(this.src)">
+    </div>
+    <h2>3. Conclusion</h2>
+    <p>Les triggers permettent :</p>
+    <ul>
+        <li>de contrôler automatiquement les données</li>
+        <li>d'empêcher les valeurs invalides</li>
+        <li>de sécuriser la base de données</li>
+    </ul>
+
+    <a href="../../../Experiences/experiences.html" class="back-btn">Retour</a>
+
+</section>
+
+<!-- Lightbox JS -->
+<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5/dist/basicLightbox.min.js"></script>
+<script>
+function openLightbox(src) {
+    const instance = basicLightbox.create(`<img src="${src}" style="max-width:90vw; max-height:90vh;">`);
+    instance.show();
+}
+</script>
+
+</body>
+</html>
