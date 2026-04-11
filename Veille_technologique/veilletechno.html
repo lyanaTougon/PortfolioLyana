@@ -4,16 +4,10 @@
 <meta charset="UTF-8">
 <title>Veille Technologique - Lyana Tougon</title>
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- CSS global -->
 <link rel="stylesheet" href="../style.css">
-
-<!-- CSS veille -->
 <link rel="stylesheet" href="veilletechno.css">
 </head>
 
@@ -39,73 +33,127 @@
 
 <h1>Veille Technologique</h1>
 
-<div class="veille-intro fade-in">
+<!-- INTRO -->
 
-<h2>Sujet de veille : Frontend Frameworks</h2>
+<div class="veille-grid">
 
+<!-- CARTE 1 -->
+<div class="veille-card fade-in">
+<h2>Veille technologique</h2>
 <p>
-Un framework front-end est un ensemble d’outils et de bibliothèques permettant 
-de créer plus facilement et rapidement des interfaces utilisateur interactives 
-pour le web. Il facilite la gestion du DOM, le style, la réactivité et la 
-modularité du code.
+La veille technologique consiste à suivre les évolutions et innovations dans le domaine informatique.
+Dans le cadre de mon BTS SIO SLAM, j’ai réalisé une veille sur les frameworks frontend.
 </p>
+</div>
+
+<!-- CARTE 2 -->
+<div class="veille-card fade-in">
+<h2>Sujet de veille : Frontend Frameworks</h2>
+<p>
+Je souhaite m’orienter vers le développement web frontend, ce qui explique le choix de ce sujet.
+</p>
+</div>
 
 </div>
 
-<h1>Exemples de frameworks</h1>
+<!-- DEFINITION -->
+<h1>Définition</h1>
+<div class="veille-intro fade-in">
+<p>
+Un framework frontend est un ensemble d’outils permettant de créer des interfaces web modernes plus rapidement et efficacement.
+</p>
+</div>
+
+<!-- FRAMEWORKS -->
+<h1>Frameworks étudiés</h1>
 
 <div class="veille-grid">
 
 <div class="veille-card fade-in">
-
 <h2><i class="fab fa-react"></i> React</h2>
-
-<p>Documentation officielle et ressources pour React.js</p>
-
-<a href="https://react.dev/" target="_blank">Voir le lien</a>
-
+<p>Développé par Meta. Très utilisé en entreprise, basé sur les composants.</p>
 </div>
 
-
 <div class="veille-card fade-in">
-
 <h2><i class="fab fa-vuejs"></i> Vue.js</h2>
-
-<p>Documentation officielle et tutoriels pour Vue.js</p>
-
-<a href="https://vuejs.org/" target="_blank">Voir le lien</a>
-
+<p>Simple, léger et facile à apprendre. Très apprécié des débutants.</p>
 </div>
 
-
 <div class="veille-card fade-in">
-
 <h2><i class="fab fa-angular"></i> Angular</h2>
-
-<p>Documentation officielle et guides pour Angular</p>
-
-<a href="https://angular.io/" target="_blank">Voir le lien</a>
+<p>Développé par Google. Framework complet mais complexe.</p>
+</div>
 
 </div>
 
+<!-- ARTICLES -->
+<h1>Analyse des articles</h1>
+
+<div class="veille-grid">
 
 <div class="veille-card fade-in">
+<h2>Article 1 – Comparaison</h2>
+<p>
+React est flexible, Angular est structuré mais complexe, Vue.js est simple et rapide.
+</p>
+<a href="https://www.lewebfrancais.fr/comparatif-des-frameworks-front-end-react-vue-et-angular-en-2025/" target="_blank">Lire l’article</a>
+</div>
 
-<h2><i class="fas fa-bolt"></i> Svelte</h2>
+<div class="veille-card fade-in">
+<h2>Article 2 – Market Share (2025)</h2>
+<p>
+React domine avec 42,6 %, Angular est à 23,8 %, Vue.js à 18,9 %.
+</p>
+<a href="https://www.furieo.com/blog/react-angular-vue-comparison-2025" target="_blank">Lire l’article</a>
+</div>
 
-<p>Documentation officielle et tutoriels pour Svelte</p>
+<div class="veille-card fade-in">
+<h2>Article 3 – Technique</h2>
+<p>
+Vue.js est le plus simple, Angular le plus complexe et React un bon compromis.
+</p>
+<a href="https://devlabyrinth.com/blog/react-vs-vue-vs-angular-2025-complete-framework-comparison/?utm_source=chatgpt.com" target="_blank">Lire l’article</a>
+</div>
 
-<a href="https://svelte.dev/" target="_blank">Voir le lien</a>
+<div class="veille-card fade-in">
+<h2>Article 4 – Tendances 2026</h2>
+<p>
+Les frameworks évoluent vers plus de performance et simplicité. React reste dominant.
+</p>
+<a href="https://medium.com/@hashbyt/react-vs-vue-vs-angular-2026-6f5e9b3f0e3e" target="_blank">Lire l’article</a>
+</div>
 
 </div>
 
+<!-- OUTIL VEILLE -->
+<h1>Outils de veille</h1>
+
+<div class="veille-grid">
+
+<div class="veille-card fade-in">
+<h2>Netboard</h2>
+<p>
+Netboard permet de centraliser les articles et suivre facilement les tendances frontend.
+</p>
+<a href="https://netboard.me/" target="_blank">Accéder</a>
+</div>
+
+
+</div>
+
+<!-- CONCLUSION -->
+<h1>Conclusion</h1>
+
+<div class="veille-intro fade-in">
+<p>
+Cette veille m’a permis de mieux comprendre les frameworks frontend.
+React domine le marché, Angular est plus complexe et Vue.js correspond le mieux à mon profil.
+</p>
 </div>
 
 </section>
 
-
 <script>
-
 const menuToggle = document.getElementById('menu-toggle');
 const navbar = document.getElementById('navbar');
 
@@ -113,33 +161,19 @@ menuToggle.addEventListener('click', () => {
 navbar.classList.toggle('active');
 });
 
-
 const faders = document.querySelectorAll('.fade-in');
 
-const appearOptions = {
-threshold:0.2,
-rootMargin:"0px 0px -50px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-
-entries.forEach(entry =>{
-
-if(!entry.isIntersecting){
-return;
-}
-
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+entries.forEach(entry => {
+if (!entry.isIntersecting) return;
 entry.target.classList.add("appear");
 observer.unobserve(entry.target);
-
 });
+}, { threshold: 0.2 });
 
-}, appearOptions);
-
-faders.forEach(fader =>{
+faders.forEach(fader => {
 appearOnScroll.observe(fader);
 });
-
 </script>
 
 </body>
